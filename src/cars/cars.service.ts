@@ -43,7 +43,7 @@ export class CarsService {
     return car;
   }
 
-  updateCar(id: string, updateCarDto: UpdateCarDto): Car {
+  update(id: string, updateCarDto: UpdateCarDto): Car {
     let carQuery = this.findCar(id);
 
     this.cars = this.cars.map((car) => {
@@ -61,7 +61,7 @@ export class CarsService {
     return carQuery;
   }
 
-  deleteCar(id: string) {
+  delete(id: string) {
     this.cars = this.cars.filter((car) => car.id !== id);
     return this.findAll();
   }
